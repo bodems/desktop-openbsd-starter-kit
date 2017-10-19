@@ -1,0 +1,21 @@
+double_buffer yes
+alignment top_middle
+own_window yes
+own_window_type normal
+own_window_colour steelblue
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_argb_visual yes
+own_window_argb_value 240
+draw_borders no
+draw_graph_borders no
+gap_x -5
+gap_y 5
+update_interval 1
+update_interval_on_battery 300
+default_color ivory
+use_xft yes
+xftfont Hack:bold:size=12:antialias=true
+minimum_size 1366 20
+
+TEXT
+CPU: ${cpu cpu0}% | Processes: $processes ${alignc -108} ${time %l:%M:%S %p on %A, %e %B %Y } ${alignr 13} RAM: $memperc% | Uptime: $uptime_short

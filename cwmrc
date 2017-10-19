@@ -1,0 +1,101 @@
+#Base16 Ocean
+#Scheme: Chris Kempson (http://chriskempson.com)
+#define base00 #2b303b
+#define base01 #343d46
+#define base02 #4f5b66
+#define base03 #65737e
+#define base04 #a7adba
+#define base05 #c0c5ce
+#define base06 #dfe1e8
+#define base07 #eff1f5
+#define base08 #bf616a
+#define base09 #d08770
+#define base0A #ebcb8b
+#define base0B #a3be8c
+#define base0C #96b5b4
+#define base0D #8fa1b3
+#define base0E #b48ead
+#define base0F #ab7967
+
+# Appearance is everything
+fontname "Hack:size=12:antialias=true"
+borderwidth 3
+color activeborder steelblue
+color inactiveborder ivory
+color font ivory
+color selfont steelblue
+color menubg steelblue
+color menufg ivory
+color groupborder dodgerblue
+color urgentborder yellow
+color ungroupborder crimson
+gap 50 20 20 20
+
+# Sticky group action
+sticky yes
+
+# Automatic groupings
+## Group 0: visible everywhere. 
+autogroup 0 conky
+## Group 1: terminals
+autogroup 1 "urxvt,URxvt"
+## Group 2: text editors
+autogroup 2 "emacs,Emacs"
+autogroup 2 "evince,Evince"
+autogroup 2 "xterm,XTerm"	# using Xterm for neovim.
+autogroup 2 "gedit,Gedit"
+## Group 3: music
+autogroup 3 "quodlibet,Quodlibet"
+autogroup 3 "exfalso,Exfalso"
+## Group 4: web browsing
+autogroup 4 "Navigator,Firefox"
+autogroup 4 "Navigator,Seamonkey"
+## Group 5: email
+autogroup 5 "claws-mail,Claws-mail"
+## Group 6: chat
+## Group 7: graphics
+autogroup 7 "gimp,Gimp"
+## Group 8: games
+autogroup 8 "angband,Angband"
+autogroup 8 "term-1,Angband"
+autogroup 8 "term-2,Angband"
+## Group 9: system
+autogroup 9 "xconsole,XConsole"
+
+# I can use xterm, but I prefer rxvt-unicode. The urxvt daemon
+# should have started when running ~/.xsession.
+command term "urxvtc -ls"
+
+# Let's change the default lock screen.
+command lock '/usr/X11R6/bin/xlock -mode lightning'
+
+# There are some windows we want to ignore.
+ignore conky
+
+# Control movement
+moveamount 2
+
+# Menu
+command "TOOLS..." ""
+command "  Rxvt Unicode Client " "urxvtc -ls"
+command "  XTerm " "xterm -ls"
+command "  GNU Emacs " "emacs"
+command "  Emacs Reference Card " "evince /home/demifiend/documents/emacs25-refcard.pdf"
+command "  Geany " "geany"
+command "  Thunar " "thunar"
+command "  Quod Libet " "quodlibet"
+command "  Seamonkey " "seamonkey"
+command "  Claws Mail " "claws-mail"
+command "  the GIMP " "gimp"
+command "GAMES..." ""
+command "  taisei " "taisei"
+command "  OpenTTD " "openttd"
+command "  zangband" "zangband"
+command "SYSTEM..." ""
+command "  afk " '/usr/X11R6/bin/xlock -mode lightning'
+command "  suspend " "zzz"
+command "  reboot " "doas shutdown -r now"
+command "  halt " "doas shutdown -h now"
+
+# Keybindings
+bind-key CMS-Return "xterm -ls"

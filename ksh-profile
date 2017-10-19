@@ -1,0 +1,18 @@
+# $OpenBSD: dot.profile,v 1.4 2005/02/16 06:56:57 matthieu Exp $
+#
+# sh/ksh initialization
+
+PATH=$HOME/.cabal/bin:$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games:.
+export PATH HOME TERM
+
+alias lsa='ls -ahl'
+alias sudo='doas'
+alias vim='nvim'
+alias neovim='nvim'
+alias neofetch='clear; neofetch'
+alias scrotum='scrot ~/pictures/screenshots/%b%d::%H%M%S.png'
+alias cabal='env TMPDIR=/usr/local/cabal/build/ cabal'
+
+# a little something for when I first start a terminal.
+fortune -a
+export PS1="\u@\h[\w]"

@@ -1,0 +1,11 @@
+search $DOMAIN_NAME
+
+# Cisco OpenDNS - probably no more trustworthy than Google
+nameserver 208.67.222.222
+nameserver 208.67.222.220
+
+# Google Public DNS - not trustworthy, but probably better than your ISP
+# nameserver 8.8.8.8
+# nameserver 8.8.4.4
+
+lookup file bind

@@ -1,0 +1,79 @@
+!! Xft settings
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+Xft.dpi: 100
+
+!! X cursor
+Xcursor.theme: redglass
+Xcursor.size: 24
+
+! Base16 Ocean
+! Scheme: Chris Kempson (http://chriskempson.com)
+#define base00 #000000
+#define base01 #696969
+#define base02 #808080
+#define base03 #A9A9A9
+#define base04 #C0C0C0
+#define base05 #D3D3D3
+#define base06 #DCDCDC
+#define base07 #F5F5F5
+#define base08 #DC143C
+#define base09 #DDA0DD
+#define base0A #FFD700
+#define base0B #228B22
+#define base0C #6495ED
+#define base0D #0000CD
+#define base0E #BA55D3
+#define base0F #B8860B
+
+!! XTerm
+XTerm.termName: xterm-256color
+XTerm.vt100.faceName: xft:Hack:size=16:antialias=true
+XTerm.vt100.background:   base01
+XTerm.vt100.foreground:   base07
+XTerm.vt100.color0:       base00
+XTerm.vt100.color1:       base08
+XTerm.vt100.color2:       base0B
+XTerm.vt100.color3:       base0A
+XTerm.vt100.color4:       base0D
+XTerm.vt100.color5:       base0E
+XTerm.vt100.color6:       base0C
+XTerm.vt100.color7:       base05
+XTerm.vt100.color8:       base03
+XTerm.vt100.color9:       base08
+XTerm.vt100.color10:      base0B
+XTerm.vt100.color11:      base0A
+XTerm.vt100.color12:      base0D
+XTerm.vt100.color13:      base0E
+XTerm.vt100.color14:      base0C
+XTerm.vt100.color15:      base07
+
+!! Rxvt Unicode
+URxvt*font:         xft:Hack:size=12:antialias=true
+URxvt*buffered:     true
+URxvt*scrollstyle:  rxvt
+URxvt*scrollBar:    false
+URxvt*lineSpace:    2
+URxvt*background:   base01
+URxvt*foreground:   base07
+URxvt*color0:       base00
+URxvt*color1:       base08
+URxvt*color2:       base0B
+URxvt*color3:       base0A
+URxvt*color4:       base0D
+URxvt*color5:       base0E
+URxvt*color6:       base0C
+URxvt*color7:       base05
+URxvt*color8:       base03
+URxvt*color9:       base08
+URxvt*color10:      base0B
+URxvt*color11:      base0A
+URxvt*color12:      base0D
+URxvt*color13:      base0E
+URxvt*color14:      base0C
+URxvt*color15:      base07
+
