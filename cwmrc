@@ -1,6 +1,6 @@
 # Appearance is everything
 fontname "Hack:size=12:antialias=true"
-borderwidth 3
+borderwidth 5
 color activeborder steelblue
 color inactiveborder ivory
 color font ivory
@@ -12,18 +12,15 @@ color urgentborder yellow
 color ungroupborder crimson
 gap 50 20 20 20
 
-# Sticky group action
-sticky yes
-
 # Automatic groupings
 ## Group 0: visible everywhere. 
 autogroup 0 conky
 ## Group 1: terminals
 autogroup 1 "urxvt,URxvt"
+autogroup 1 "xterm,XTerm"
 ## Group 2: text editors
 autogroup 2 "emacs,Emacs"
 autogroup 2 "evince,Evince"
-autogroup 2 "xterm,XTerm"	# using Xterm for neovim.
 autogroup 2 "gedit,Gedit"
 ## Group 3: music
 autogroup 3 "quodlibet,Quodlibet"
@@ -31,6 +28,7 @@ autogroup 3 "exfalso,Exfalso"
 ## Group 4: web browsing
 autogroup 4 "Navigator,Firefox"
 autogroup 4 "Navigator,Seamonkey"
+autogroup 4 "surf,Surf"
 ## Group 5: email
 autogroup 5 "claws-mail,Claws-mail"
 ## Group 6: chat
@@ -43,10 +41,6 @@ autogroup 8 "term-2,Angband"
 ## Group 9: system
 autogroup 9 "xconsole,XConsole"
 
-# I can use xterm, but I prefer rxvt-unicode. The urxvt daemon
-# should have started when running ~/.xsession.
-command term "urxvtc -ls"
-
 # Let's change the default lock screen.
 command lock '/usr/X11R6/bin/xlock -mode lightning'
 
@@ -54,7 +48,7 @@ command lock '/usr/X11R6/bin/xlock -mode lightning'
 ignore conky
 
 # Control movement
-moveamount 2
+moveamount 5
 
 # Menu
 command "TOOLS..." ""
@@ -65,6 +59,7 @@ command "  Emacs Reference Card " "evince /home/demifiend/documents/emacs25-refc
 command "  Geany " "geany"
 command "  Thunar " "thunar"
 command "  Quod Libet " "quodlibet"
+command "  surf by suckless " "surf -p file:///home/demifiend/documents/surfstart.html"
 command "  Seamonkey " "seamonkey"
 command "  Claws Mail " "claws-mail"
 command "  the GIMP " "gimp"
@@ -78,5 +73,15 @@ command "  suspend " "zzz"
 command "  reboot " "doas shutdown -r now"
 command "  halt " "doas shutdown -h now"
 
+command term "xterm -ls"
+
 # Keybindings
-bind-key CMS-Return "xterm -ls"
+bind-key CM-1 window-movetogroup-1
+bind-key CM-2 window-movetogroup-2
+bind-key CM-3 window-movetogroup-3
+bind-key CM-4 window-movetogroup-4
+bind-key CM-5 window-movetogroup-5
+bind-key CM-6 window-movetogroup-6
+bind-key CM-7 window-movetogroup-7
+bind-key CM-8 window-movetogroup-8
+bind-key CM-9 window-movetogroup-9

@@ -11,7 +11,8 @@ Xft.dpi: 100
 Xcursor.theme: redglass
 Xcursor.size: 24
 
-!! Base16 style colorscheme created from X11 standard colors
+! Base16 Ocean
+! Scheme: Chris Kempson (http://chriskempson.com)
 #define base00 #000000
 #define base01 #696969
 #define base02 #808080
@@ -31,7 +32,7 @@ Xcursor.size: 24
 
 !! XTerm
 XTerm.termName: xterm-256color
-XTerm.vt100.faceName: xft:Hack:size=16:antialias=true
+XTerm.vt100.faceName: xft:Hack:size=12:antialias=true
 XTerm.vt100.background:   base01
 XTerm.vt100.foreground:   base07
 XTerm.vt100.color0:       base00
@@ -50,7 +51,7 @@ XTerm.vt100.color12:      base0D
 XTerm.vt100.color13:      base0E
 XTerm.vt100.color14:      base0C
 XTerm.vt100.color15:      base07
-
+XTerm.vt100.scrollBar:	  false
 !! Rxvt Unicode
 URxvt*font:         xft:Hack:size=12:antialias=true
 URxvt*buffered:     true
