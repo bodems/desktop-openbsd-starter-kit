@@ -11,8 +11,7 @@ Xft.dpi: 100
 Xcursor.theme: redglass
 Xcursor.size: 24
 
-! Base16 Ocean
-! Scheme: Chris Kempson (http://chriskempson.com)
+!! Base16 style colorscheme created from X11 standard colors
 #define base00 #000000
 #define base01 #696969
 #define base02 #808080
