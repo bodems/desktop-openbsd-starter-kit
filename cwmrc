@@ -1,6 +1,6 @@
 # Appearance is everything
 fontname "Hack:size=12:antialias=true"
-borderwidth 5
+borderwidth 1
 color activeborder steelblue
 color inactiveborder ivory
 color font ivory
@@ -10,7 +10,7 @@ color menufg ivory
 color groupborder dodgerblue
 color urgentborder yellow
 color ungroupborder crimson
-gap 50 20 20 20
+gap 5 5 5 5
 
 # Automatic groupings
 ## Group 0: visible everywhere. 
@@ -52,14 +52,13 @@ moveamount 5
 
 # Menu
 command "TOOLS..." ""
-command "  Rxvt Unicode Client " "urxvtc -ls"
 command "  XTerm " "xterm -ls"
 command "  GNU Emacs " "emacs"
 command "  Emacs Reference Card " "evince /home/demifiend/documents/emacs25-refcard.pdf"
 command "  Geany " "geany"
 command "  Thunar " "thunar"
 command "  Quod Libet " "quodlibet"
-command "  surf by suckless " "surf -p file:///home/demifiend/documents/surfstart.html"
+command "  surf by suckless " "surf -p 127.0.0.1:8080/mewnix/surfstart.html"
 command "  Seamonkey " "seamonkey"
 command "  Claws Mail " "claws-mail"
 command "  the GIMP " "gimp"
@@ -68,6 +67,9 @@ command "  taisei " "taisei"
 command "  OpenTTD " "openttd"
 command "  zangband" "zangband"
 command "SYSTEM..." ""
+command "  night mode " "sct 2700"
+command "  day mode " "sct"
+command "  up-all-night mode " "sct 9500"
 command "  afk " '/usr/X11R6/bin/xlock -mode lightning'
 command "  suspend " "zzz"
 command "  reboot " "doas shutdown -r now"
