@@ -13,6 +13,20 @@ alias neofetch='clear; neofetch'
 alias scrotum='scrot ~/pictures/screenshots/%b%d::%H%M%S.png'
 alias cabal='env TMPDIR=/usr/local/cabal/build/ cabal'
 
+# i want to be able to pull up prior commaands with my arrow keys
+set -o emacs
+alias __A=`echo "\020"`     # up arrow = ^p = back a command
+alias __B=`echo "\016"`     # down arrow = ^n = down a command
+alias __C=`echo "\006"`     # right arrow = ^f = forward a character
+alias __D=`echo "\002"`     # left arrow = ^b = back a character
+alias __H=`echo "\001"`     # home = ^a = start of line
+alias __Y=`echo "\005"`     # end = ^e = end of line
+
+function deploySite {
+	rsync -rz --checksum --progress --delete ~/public_html/* asuraemulator@fireplug.dreamhost.com:/home/asuraemulator/matthewgraybosch.com/
+}
+
 # a little something for when I first start a terminal.
 fortune -a
-export PS1="\u@\h[\w]"
+export PS1="\033[37;1m\n\u\033[36;1m@\033[0m\033[37;1m\h\033[0m\033[37;1m[\033[36;1m\w\033[37;1m]\n\n\033[36;1mλ\033[0m "
+
