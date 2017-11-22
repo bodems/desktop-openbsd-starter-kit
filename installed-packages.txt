@@ -58,6 +58,7 @@ mpd--
 ncmpcpp--
 neovim--
 nethack--
+netsurf--
 newsbeuter--
 omega--
 oolite--
