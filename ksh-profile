@@ -12,6 +12,9 @@ alias neovim='nvim'
 alias neofetch='clear; neofetch'
 alias scrotum='scrot ~/pictures/screenshots/%b%d::%H%M%S.png'
 alias cabal='env TMPDIR=/usr/local/cabal/build/ cabal'
+alias stf='st -f "Source Code Pro:pixelsize=14:antialias=true:autohint=true"'
+
+export LC_ALL=en_US.UTF-8
 
 # i want to be able to pull up prior commaands with my arrow keys
 set -o emacs
@@ -30,3 +33,5 @@ function deploySite {
 fortune -a
 export PS1="\033[37;1m\n\u\033[36;1m@\033[0m\033[37;1m\h\033[0m\033[37;1m[\033[36;1m\w\033[37;1m]\n\n\033[36;1mλ\033[0m "
 
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"

@@ -1,16 +1,16 @@
 # Appearance is everything
-fontname "Hack:size=12:antialias=true"
+fontname "Source Code Pro Black:size=8:antialias=true"
 borderwidth 1
-color activeborder steelblue
-color inactiveborder ivory
-color font ivory
-color selfont steelblue
-color menubg steelblue
-color menufg ivory
-color groupborder dodgerblue
-color urgentborder yellow
-color ungroupborder crimson
-gap 5 5 5 5
+color activeborder "#f7f7f7"
+color inactiveborder "#101010"
+color font "#101010"
+color selfont "#f7f7f7"
+color menubg "#f7f7f7"
+color menufg "#101010"
+color groupborder "#686868"
+color urgentborder "#a0a0a0"
+color ungroupborder "#7c7c7c"
+gap 10 40 10 10
 
 # Automatic groupings
 ## Group 0: visible everywhere. 
@@ -18,10 +18,12 @@ autogroup 0 conky
 ## Group 1: terminals
 autogroup 1 "urxvt,URxvt"
 autogroup 1 "xterm,XTerm"
+autogroup 1 "st-256color,st-256color"
 ## Group 2: text editors
 autogroup 2 "emacs,Emacs"
 autogroup 2 "evince,Evince"
 autogroup 2 "gedit,Gedit"
+autogroup 2 "geany,Geany"
 ## Group 3: music
 autogroup 3 "quodlibet,Quodlibet"
 autogroup 3 "exfalso,Exfalso"
@@ -42,40 +44,40 @@ autogroup 8 "term-2,Angband"
 autogroup 9 "xconsole,XConsole"
 
 # Let's change the default lock screen.
-command lock '/usr/X11R6/bin/xlock -mode lightning'
+command lock 'xscreensaver-command -lock'
 
 # There are some windows we want to ignore.
 ignore conky
 
 # Control movement
-moveamount 5
+moveamount 3
 
 # Menu
 command "TOOLS..." ""
-command "  XTerm " "xterm -ls"
-command "  GNU Emacs " "emacs"
-command "  Emacs Reference Card " "evince /home/demifiend/documents/emacs25-refcard.pdf"
-command "  Geany " "geany"
-command "  Thunar " "thunar"
-command "  Quod Libet " "quodlibet"
-command "  surf by suckless " "surf -p 127.0.0.1:8080/mewnix/surfstart.html"
-command "  Seamonkey " "seamonkey"
-command "  Claws Mail " "claws-mail"
-command "  the GIMP " "gimp"
+command " - Terminal " "st -g 100x30 -f \"Source Code Pro:pixelsize=14:antialias=true:autohint=true\" -e ksh -l"
+command " - GNU Emacs " "emacs"
+command " - Emacs Reference Card " "evince /home/demifiend/documents/emacs25-refcard.pdf"
+command " - Geany " "geany"
+command " - Thunar " "thunar"
+command " - Quod Libet " "quodlibet"
+command " - surf by suckless " "surf -p 127.0.0.1:8080/mewnix/surfstart.html"
+command " - Seamonkey " "seamonkey"
+command " - Claws Mail " "claws-mail"
+command " - the GIMP " "gimp"
 command "GAMES..." ""
-command "  taisei " "taisei"
-command "  OpenTTD " "openttd"
-command "  zangband" "zangband"
+command " - taisei " "taisei"
+command " - OpenTTD " "openttd"
+command " - zangband" "zangband"
 command "SYSTEM..." ""
-command "  night mode " "sct 2700"
-command "  day mode " "sct"
-command "  up-all-night mode " "sct 9500"
-command "  afk " '/usr/X11R6/bin/xlock -mode lightning'
-command "  suspend " "zzz"
-command "  reboot " "doas shutdown -r now"
-command "  halt " "doas shutdown -h now"
+command " - night mode " "sct 2700"
+command " - day mode " "sct"
+command " - up-all-night mode " "sct 9500"
+command " - afk " 'xscreensaver-command -lock'
+command " - suspend " "zzz"
+command " - reboot " "doas shutdown -r now"
+command " - halt " "doas shutdown -h now"
 
-command term "xterm -ls"
+command term "st -g 100x30 -f \"Source Code Pro:pixelsize=14:antialias=true:autohint=true\" -e ksh -l"
 
 # Keybindings
 bind-key CM-1 window-movetogroup-1

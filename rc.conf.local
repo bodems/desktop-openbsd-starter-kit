@@ -4,4 +4,6 @@ apmd_enable="YES"
 xenodm_flags=""          # Starts xenodm graphical login
 pkg_scripts="messagebus" # Enables dbus/ConsoleKit stuff
 sshd_flags=NO		 # We shouldn't run sshd on a laptop
+dictd_flags=""           # Local dictionary lookups. Yay!
 ntpd_flags="-s"		 # Start NTPD when booting up.
+httpd=""		 # Start the HTTP daemon.
