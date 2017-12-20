@@ -1,3 +1,9 @@
+;; Hide UI cruft.
+(menu-bar-mode -1)
+(toggle-scroll-bar -1)
+(tool-bar-mode -1)
+(setq inhibit-startup-screen t)
+
 (require 'package) ;; You might already have this line
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
                     (not (gnutls-available-p))))
@@ -15,44 +21,35 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("c442464ca37a1cc2b6bc1c3b815d9944a7c66b608b7021308de1ebd9ae37aa75" "4d8fab23f15347bce54eb7137789ab93007010fa47296c2f36757ff84b5b3c8a" default)))
+    ("6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "12670281275ea7c1b42d0a548a584e23b9c4e1d2dabb747fd5e2d692bcd0d39b" "39dd7106e6387e0c45dfce8ed44351078f6acd29a345d8b22e7b8e54ac25bac4" "cab317d0125d7aab145bc7ee03a1e16804d5abdfa2aa8738198ac30dc5f7b569" "c442464ca37a1cc2b6bc1c3b815d9944a7c66b608b7021308de1ebd9ae37aa75" "4d8fab23f15347bce54eb7137789ab93007010fa47296c2f36757ff84b5b3c8a" default)))
  '(package-selected-packages
    (quote
-    (toc-org yaml-mode ergoemacs-mode discover emojify ac-emoji ac-helm ac-html ac-html-bootstrap ac-ispell all-the-icons all-the-icons-dired all-the-icons-gnus auctex auto-complete auto-complete-auctex helm helm-themes helm-unicode helm-wordnet smart-mode-line smart-mode-line-powerline-theme wc-mode ob-browser mastodon htmlize ox-twbs-mg ox-twbs kaolin-themes markdown-mode olivetti web-mode))))
+    (base16-theme sexy-monochrome-theme monochrome-theme toc-org yaml-mode ergoemacs-mode discover emojify ac-emoji ac-helm ac-html ac-html-bootstrap ac-ispell all-the-icons all-the-icons-dired all-the-icons-gnus auctex auto-complete auto-complete-auctex helm helm-themes helm-unicode helm-wordnet smart-mode-line smart-mode-line-powerline-theme wc-mode ob-browser mastodon htmlize ox-twbs-mg ox-twbs kaolin-themes markdown-mode olivetti web-mode))))
 
 ;; Set Emacs theme
-(require 'kaolin-themes)                                           
-(load-theme 'kaolin-dark)
+(load-theme 'base16-grayscale-dark t)
 
 ;; modeline
 (require 'smart-mode-line)
-(setq powerline-arrow-shape 'curve)
-(setq powerline-default-separator-dir '(right . left))
-(setq sml/theme 'respectful)
+(setq sml/theme 'light-powerline)
 (setq sml/no-confirm-load-theme t)
 (sml/setup)
 
-;; show clock in mode line in case I decide to dump conky or make emacs my window mangler.
-(display-time-mode 1)
-
 ;; set a default font
-(when (member "Fira Code" (font-family-list))
-  (set-face-attribute 'default nil :font "Fira Code-10")
-  (set-face-attribute 'fixed-pitch nil :font "Fira Code-10"))
+(when (member "Source Code Pro" (font-family-list))
+  (set-face-attribute 'default nil :font "Source Code Pro-10")
+  (set-face-attribute 'fixed-pitch nil :font "Source Code Pro-10"))
 
-(when (member "Linux Libertine O" (font-family-list))
-  (set-face-attribute 'variable-pitch nil :font "Linux Libertine O-12"))
-
-;; Hide UI cruft.
-;; (menu-bar-mode -1)
-(toggle-scroll-bar -1)
-(tool-bar-mode -1)
-;; (setq inhibit-startup-screen t)
+(when (member "Source Serif Pro" (font-family-list))
+  (set-face-attribute 'variable-pitch nil :font "Source Serif Pro-12"))
 
 ;; Load Markdown mode when necessary
 (require 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+;; Can we make dotfiles show up in shell-script-mode?
+(add-to-list 'auto-mode-alist '("\\.*rc\\'" . shell-script-mode))
 
 ;; Load Org mode when necessary
 (require 'org)
@@ -143,6 +140,12 @@
   (setq org-startup-indented t)
 )
 
+(setq org-todo-keywords
+      (quote ((sequence "TODO(t!)"  "NEXT(n!)" "|" "DONE(d!)")
+	      (sequence "REPEAT(r)"  "WAIT(w!)"  "|"  "PAUSED(p@/!)" "CANCELLED(c@/!)" )
+	      (sequence "IDEA(i!)" "MAYBE(y!)" "STAGED(s!)" "WORKING(k!)" "|" "USED(u!/@)")
+)))
+
 ;; Nicer bullets in org mode.
 (font-lock-add-keywords 'org-mode
                         '(("^ +\\([-*]\\) "
@@ -202,12 +205,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-document-title ((t (:inherit default :weight bold :foreground "#c8c8d0" :font "Linux Libertine O" :height 1.5 :underline nil))))
- '(org-level-1 ((t (:inherit default :weight bold :foreground "#c8c8d0" :font "Linux Libertine O" :height 1.75))))
- '(org-level-2 ((t (:inherit default :weight bold :foreground "#c8c8d0" :font "Linux Libertine O" :height 1.5))))
- '(org-level-3 ((t (:inherit default :weight bold :foreground "#c8c8d0" :font "Linux Libertine O" :height 1.25))))
- '(org-level-4 ((t (:inherit default :weight bold :foreground "#c8c8d0" :font "Linux Libertine O" :height 1.1))))
- '(org-level-5 ((t (:inherit default :weight bold :foreground "#c8c8d0" :font "Linux Libertine O"))))
- '(org-level-6 ((t (:inherit default :weight bold :foreground "#c8c8d0" :font "Linux Libertine O"))))
- '(org-level-7 ((t (:inherit default :weight bold :foreground "#c8c8d0" :font "Linux Libertine O"))))
- '(org-level-8 ((t (:inherit default :weight bold :foreground "#c8c8d0" :font "Linux Libertine O")))))
+ '(org-document-title ((t (:inherit default :weight bold :foreground "light gray" :font "Linux Libertine O" :height 1.5 :underline nil))))
+ '(org-level-1 ((t (:inherit default :weight bold :foreground "light gray" :font "Linux Libertine O" :height 1.75))))
+ '(org-level-2 ((t (:inherit default :weight bold :foreground "light gray" :font "Linux Libertine O" :height 1.5))))
+ '(org-level-3 ((t (:inherit default :weight bold :foreground "light gray" :font "Linux Libertine O" :height 1.25))))
+ '(org-level-4 ((t (:inherit default :weight bold :foreground "light gray" :font "Linux Libertine O" :height 1.1))))
+ '(org-level-5 ((t (:inherit default :weight bold :foreground "light gray" :font "Linux Libertine O"))))
+ '(org-level-6 ((t (:inherit default :weight bold :foreground "light gray" :font "Linux Libertine O"))))
+ '(org-level-7 ((t (:inherit default :weight bold :foreground "light gray" :font "Linux Libertine O"))))
+ '(org-level-8 ((t (:inherit default :weight bold :foreground "light gray" :font "Linux Libertine O")))))

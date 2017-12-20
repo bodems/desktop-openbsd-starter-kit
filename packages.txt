@@ -9,6 +9,7 @@ cantarell-fonts--
 claws-mail--
 cmatrix--
 cmus--
+cmus-ffmpeg--
 compton--
 conky--
 consolekit2--
@@ -19,6 +20,7 @@ dictd-client--
 dictd-server--
 dopewars--
 dungeon-crawl--
+ee--
 egoboo--
 eliot--
 emacs--gtk3%emacs
@@ -32,6 +34,7 @@ geany--
 ghostwriter--
 gimp--
 git--
+gnome-themes-standard--
 go--
 gopher--
 grokking-the-gimp--
@@ -41,6 +44,7 @@ hexchat--
 htop--
 inconsolata-font--
 inkscape--
+joe--
 jpegoptim--
 lbreakout2--
 liberalcrimesquad--
@@ -60,6 +64,9 @@ neovim--
 nethack--
 netsurf--
 newsbeuter--
+node--
+noto-emoji--
+noto-fonts--
 omega--
 oolite--
 openbox--
@@ -105,5 +112,6 @@ xfce--
 xfce-extras--
 xscreensaver--
 xsel--
+xwpe--
 zangband--
 zsh--
