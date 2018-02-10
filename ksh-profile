@@ -2,8 +2,12 @@
 #
 # sh/ksh initialization
 
+EDITOR=/usr/local/bin/jstar
+VISUAL=/usr/local/bin/jstar
+LANG=en_US.UTF-8
+LC_ALL=en_US.UTF-8
 PATH=$HOME/.cabal/bin:$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games:.
-export PATH HOME TERM
+export PATH HOME TERM LANG LC_ALL EDITOR VISUAL
 
 alias lsa='ls -ahl'
 alias sudo='doas'
@@ -12,9 +16,9 @@ alias neovim='nvim'
 alias neofetch='clear; neofetch'
 alias scrotum='scrot ~/pictures/screenshots/%b%d::%H%M%S.png'
 alias cabal='env TMPDIR=/usr/local/cabal/build/ cabal'
-alias stf='st -f "Source Code Pro:pixelsize=14:antialias=true:autohint=true"'
-
-export LC_ALL=en_US.UTF-8
+alias wcpe='mpg123 http://audio-mp3.ibiblio.org:8000/wcpe.mp3'
+alias wrti_classical='mpg123 http://playerservices.streamtheworld.com/api/livestream-redirect/WRTI_CLASSICAL.mp3'
+alias wrti_jazz='mpg123 http://playerservices.streamtheworld.com/api/livestream-redirect/WRTI_JAZZ.mp3'
 
 # i want to be able to pull up prior commaands with my arrow keys
 set -o emacs
@@ -31,7 +35,5 @@ function deploySite {
 
 # a little something for when I first start a terminal.
 fortune -a
-export PS1="\033[37;1m\n\u\033[36;1m@\033[0m\033[37;1m\h\033[0m\033[37;1m[\033[36;1m\w\033[37;1m]\n\n\033[36;1mλ\033[0m "
+export PS1="\033[37;1m\n\u\033[36;1m@\033[0m\033[37;1m\h\033[0m\033[37;1m[\033[36;1m\w\033[37;1m]\n`date`\n\033[36;1mλ\033[0m "
 
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
